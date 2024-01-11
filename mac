@@ -158,15 +158,15 @@ fi
 
 fancy_echo "Install Oh My Zsh plugins ..."
 if [ -d $(brew --prefix)/share/zsh-autosuggestions ]; then
-  prepend_to_zshrc 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
+  append_to_zshrc 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
 fi
 
 if [ -d $(brew --prefix)/share/zsh-history-substring-search ]; then
-  prepend_to_zshrc 'source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
+  append_to_zshrc 'source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
 fi
 
 if [ -d $(brew --prefix)/share/zsh-syntax-highlighting ]; then
-  prepend_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+  append_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 fi
 
 fancy_echo "Update heroku binary ..."
