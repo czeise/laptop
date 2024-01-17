@@ -50,9 +50,11 @@ Read through it to see if you can debug the issue yourself.
 
 ## What it sets up
 
-macOS tools:
+General tools and applications:
 
 * [Homebrew] for managing operating system libraries.
+* 1password
+* Firefox
 
 [Homebrew]: http://brew.sh/
 
@@ -71,12 +73,6 @@ Unix tools:
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Tmux]: http://tmux.github.io/
 [Zsh]: http://www.zsh.org/
-
-Heroku tools:
-
-* [Heroku CLI]
-
-[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
 
 <!-- GitHub tools:
 
@@ -111,6 +107,29 @@ Databases:
 
 [Postgres]: http://www.postgresql.org/
 [Redis]: http://redis.io/
+
+General development tools and applications:
+
+* exa as an `ls` replacement
+* overmind
+* Terminal and Zsh tools
+* Firefox Developer Edition
+* iterm2
+* Visual Studio Code
+
+Personal development tools and applications (can be on TD laptop):
+
+* exercism for programming exercises
+* flyctl for deploying to Fly.io
+* utm for running macOS in a virtual machine (and testing this script...)
+
+Test Double Tools and applications:
+
+* [Heroku CLI]
+* Hugo
+* Slack
+
+[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
 
 It should take less than 15 minutes to install (depends on your machine).
 
