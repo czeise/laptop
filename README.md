@@ -53,36 +53,16 @@ Read through it to see if you can debug the issue yourself.
 General tools and applications:
 
 * [Homebrew] for managing operating system libraries.
-* 1password
-* Firefox
 
 [Homebrew]: http://brew.sh/
 
 Unix tools:
 
-* [Git] for version control
-* [OpenSSL] for Transport Layer Security (TLS)
 * [RCM] for managing dotfiles
 * [The Silver Searcher] for finding things in files
-* [Tmux] for saving project state and switching between projects
-* [Zsh] as your shell
 
-[Git]: https://git-scm.com/
-[OpenSSL]: https://www.openssl.org/
 [RCM]: https://github.com/thoughtbot/rcm
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
-[Tmux]: http://tmux.github.io/
-[Zsh]: http://www.zsh.org/
-
-<!-- GitHub tools:
-
-* [GitHub CLI] for interacting with the GitHub API
-
-[GitHub CLI]: https://cli.github.com/ -->
-
-Image tools:
-
-* [ImageMagick] for cropping and resizing images
 
 Programming languages, package managers, and configuration:
 
@@ -93,43 +73,16 @@ Programming languages, package managers, and configuration:
 * [Yarn] for managing JavaScript packages
 
 [Bundler]: http://bundler.io/
-[ImageMagick]: http://www.imagemagick.org/
 [Node.js]: http://nodejs.org/
 [npm]: https://www.npmjs.org/
 [asdf-vm]: https://github.com/asdf-vm/asdf
 [Ruby]: https://www.ruby-lang.org/en/
 [Yarn]: https://yarnpkg.com/en/
 
-Databases:
-
-* [Postgres] for storing relational data
-* [Redis] for storing key-value data
-
-[Postgres]: http://www.postgresql.org/
-[Redis]: http://redis.io/
-
 General development tools and applications:
 
 * exa as an `ls` replacement
-* overmind
 * Terminal and Zsh tools
-* Firefox Developer Edition
-* iterm2
-* Visual Studio Code
-
-Personal development tools and applications (can be on TD laptop):
-
-* exercism for programming exercises
-* flyctl for deploying to Fly.io
-* utm for running macOS in a virtual machine (and testing this script...)
-
-Test Double Tools and applications:
-
-* [Heroku CLI]
-* Hugo
-* Slack
-
-[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
 
 It should take less than 15 minutes to install (depends on your machine).
 

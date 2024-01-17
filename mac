@@ -110,51 +110,18 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 # General
-cask "1password"
-cask "firefox"
 
 # Unix
-brew "git"
-brew "openssl"
 brew "rcm"
 brew "the_silver_searcher"
-brew "tmux"
-brew "zsh"
-
-# GitHub
-# brew "gh"
-
-# Image manipulation
-brew "imagemagick"
-
-# Programming language prerequisites and package managers
-brew "yarn"
-cask "gpg-suite-no-mail"
-
-# Databases
-brew "postgresql", restart_service: :changed
-brew "redis", restart_service: :changed
 
 # Development tools
 brew "exa"
-brew "overmind"
 brew "terminal-notifier"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
-cask "firefox-developer-edition"
-cask "iterm2"
-cask "visual-studio-code"
 
-# Personal development (can be on TD laptop)
-brew "exercism"
-brew "flyctl"
-cask "utm"
-
-# Test Double
-cask "slack"
-brew "heroku"
-brew "hugo"
 EOF
 
 fancy_echo "Install Oh My Zsh ..."
@@ -174,10 +141,6 @@ fi
 if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
   append_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 fi
-
-fancy_echo "Update heroku binary ..."
-brew unlink heroku
-brew link --force heroku
 
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
