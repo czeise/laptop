@@ -122,6 +122,9 @@ brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 
+# Chime
+1password-cli
+
 EOF
 
 fancy_echo "Install Oh My Zsh ..."

@@ -24,7 +24,7 @@ Bug reports for older versions are welcome.
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/czeise/laptop/main/mac
+curl --remote-name https://raw.githubusercontent.com/czeise/laptop/chime-configuration/mac
 ```
 
 Execute the downloaded script:
