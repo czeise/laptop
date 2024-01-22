@@ -123,7 +123,9 @@ brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 
 # Chime
-brew "1password-cli"
+tap "1debit/chime"
+brew "1password-cli" # TODO: Doesn't work for some reason
+brew "halo"
 
 EOF
 
