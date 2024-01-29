@@ -115,6 +115,9 @@ tap "heroku/brew"
 brew "rcm"
 brew "the_silver_searcher"
 
+# Databases
+brew "postgresql", restart_service: :changed
+
 # Development tools
 brew "exa"
 brew "terminal-notifier"
