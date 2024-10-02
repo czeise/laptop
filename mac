@@ -130,6 +130,7 @@ brew "zsh-syntax-highlighting"
 tap "1debit/chime"
 brew "1password-cli"
 brew "halo"
+brew "compass"
 
 EOF
 
