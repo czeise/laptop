@@ -110,16 +110,15 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 # General
-# brew "wireguard-tools" # Do I still use this?
 cask "1password"
-# cask "firefox"
+cask "discord" # Using both for personal and work laptop setups
 
 # Unix
 brew "git"
 brew "openssl"
 brew "rcm"
 brew "the_silver_searcher"
-# brew "tmux" # I think I just used this for Overmind
+brew "tmux"
 brew "zsh"
 
 # GitHub
@@ -130,7 +129,7 @@ brew "imagemagick"
 
 # Programming language prerequisites and package managers
 brew "yarn"
-# cask "gpg-suite-no-mail" # Do I need this anymore?
+cask "gpg-suite-no-mail"
 
 # Databases
 brew "postgresql", restart_service: :changed
@@ -138,7 +137,7 @@ brew "redis", restart_service: :changed
 
 # Development tools
 brew "exa"
-# brew "overmind" # This may be client specific...
+brew "overmind"
 brew "terminal-notifier"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
@@ -151,7 +150,6 @@ cask "visual-studio-code"
 brew "exercism"
 brew "flyctl"
 cask "utm"
-cask "discord"
 
 # Test Double
 cask "slack"
