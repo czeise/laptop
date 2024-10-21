@@ -154,7 +154,6 @@ cask "utm"
 # Test Double
 cask "slack"
 brew "heroku"
-brew "hugo"
 EOF
 
 fancy_echo "Install Oh My Zsh ..."
