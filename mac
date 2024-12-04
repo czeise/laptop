@@ -164,15 +164,15 @@ fi
 
 fancy_echo "Install Oh My Zsh plugins ..."
 if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
+  append_to_zshrc 'source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
 fi
 
 if [ -d $HOMEBREW_PREFIX/share/zsh-history-substring-search ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
+  append_to_zshrc 'source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
 fi
 
 if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+  append_to_zshrc 'source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 fi
 
 fancy_echo "Add Starship init script to ~/.zshrc ..."
