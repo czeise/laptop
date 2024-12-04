@@ -175,9 +175,8 @@ if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
   append_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 fi
 
-fancy_echo "Install Starship prompt ..."
-# TODO: Continue here...see what dir shows up and add the following line if it's there...
-# append_to_zshrc 'eval "$(starship init zsh)"'
+fancy_echo "Add Starship init script to ~/.zshrc ..."
+append_to_zshrc 'eval "$(starship init zsh)"'
 
 fancy_echo "Update heroku binary ..."
 brew unlink heroku
