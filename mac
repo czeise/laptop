@@ -45,6 +45,13 @@ if [ ! -f "$HOME/.zshrc" ]; then
   touch "$HOME/.zshrc"
 fi
 
+# Note: the Oh My Zsh install script backs up and replaces the existing .zshrc
+# file, so it needs to be installed before any other .zshrc modifications.
+fancy_echo "Install Oh My Zsh ..."
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
 # shellcheck disable=SC2016
 append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
@@ -157,24 +164,6 @@ cask "slack"
 brew "heroku/brew/heroku"
 EOF
 
-fancy_echo "Install Oh My Zsh ..."
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-fi
-
-fancy_echo "Install Oh My Zsh plugins ..."
-if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
-  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
-
-if [ -d $HOMEBREW_PREFIX/share/zsh-history-substring-search ]; then
-  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
-fi
-
-if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
-  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
 fancy_echo "Add Starship init script to ~/.zshrc ..."
 append_to_zshrc 'eval "$(starship init zsh)"'
 
@@ -224,6 +213,19 @@ bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "Installing latest Node ..."
 install_asdf_language "nodejs"
+
+fancy_echo "Install Oh My Zsh plugins ..."
+if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+if [ -d $HOMEBREW_PREFIX/share/zsh-history-substring-search ]; then
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+fi
+
+if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
