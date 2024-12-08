@@ -107,10 +107,18 @@ brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "heroku/brew"
+brew "mas" # mas-cli to install macOS apps
 
 # General
 cask "1password"
 cask "discord" # Using both for personal and work laptop setups
+mas "AdGuard for Safari", id: 1440147259
+mas "1Password for Safari", id: 1569813296
+mas "Magnet", id: 441258766
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
+mac "HP Smart", id: 1474276998
+mac "Bear", id: 1091189122
+# TODO: Add Todoist
 
 # Unix
 brew "git"
