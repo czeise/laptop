@@ -116,8 +116,8 @@ mas "AdGuard for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
-mac "HP Smart", id: 1474276998
-mac "Bear", id: 1091189122
+mas "HP Smart", id: 1474276998
+mas "Bear", id: 1091189122
 # TODO: Add Todoist
 
 # Unix
