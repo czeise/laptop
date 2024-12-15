@@ -79,6 +79,22 @@ case "$SHELL" in
     ;;
 esac
 
+# Rosetta 2
+#
+# Note: This is currently only needed for ddpm. Remove if no longer needed.
+if [ "$(uname -m)" = "arm64" ]
+  then
+  # checks if Rosetta is already installed
+  if ! pkgutil --pkg-info=com.apple.pkg.RosettaUpdateAuto > /dev/null 2>&1
+  then
+    echo "Installing Rosetta"
+    # Installs Rosetta2
+    softwareupdate --install-rosetta --agree-to-license
+  else
+    echo "Rosetta is installed"
+  fi
+fi
+
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     gem update "$@"
@@ -107,10 +123,24 @@ brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "heroku/brew"
+brew "mas" # mas-cli to install macOS apps, doesn't work with utm
 
 # General
 cask "1password"
+cask "1password-cli"
+cask "lunar"
 cask "discord" # Using both for personal and work laptop setups
+mas "AdGuard for Safari", id: 1440147259
+mas "1Password for Safari", id: 1569813296
+mas "Magnet", id: 441258766
+mas "com.kagimacOS.Kagi-Search", id: 1622835804
+cask "spotify"
+
+# Hardware related apps
+cask "ddpm"
+cask "logi-options+" # Logitech mice and keyboards
+cask "logitune" # Logitech cameras
+mas "HP Smart", id: 1474276998 # HP printers
 
 # Unix
 brew "git"
@@ -138,12 +168,16 @@ brew "redis", restart_service: :changed
 brew "eza"
 brew "overmind"
 brew "terminal-notifier"
+brew "starship"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 cask "firefox@developer-edition"
+cask "font-jetbrains-mono"
 cask "iterm2"
 cask "visual-studio-code"
+cask "tableplus"
+cask "bruno"
 
 # Personal development (can be on TD laptop)
 brew "exercism"
@@ -152,26 +186,25 @@ cask "utm"
 
 # Test Double
 cask "slack"
+cask "notion"
 brew "heroku/brew/heroku"
+cask "zoom"
+
+# Home laptop only
+mas "Bear", id: 1091189122
+# TODO: Add Todoist
+cask "idrive"
 EOF
 
-fancy_echo "Install Oh My Zsh ..."
+fancy_echo "Installing Oh My Zsh ..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  sh -c "$(cat ~/.zshrc.pre-oh-my-zsh >> ~/.zshrc)"
 fi
 
-fancy_echo "Install Oh My Zsh plugins ..."
-if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
-fi
-
-if [ -d $HOMEBREW_PREFIX/share/zsh-history-substring-search ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
-fi
-
-if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
-  append_to_zshrc 'source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-fi
+fancy_echo "Add Starship init script to ~/.zshrc ..."
+append_to_zshrc "# Starship init script"
+append_to_zshrc 'eval "$(starship init zsh)"' 1
 
 fancy_echo "Update heroku binary ..."
 brew unlink heroku
@@ -180,6 +213,7 @@ brew link --force heroku
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
   brew install asdf
+  append_to_zshrc "# asdf version manager"
   append_to_zshrc "source $(brew --prefix asdf)/libexec/asdf.sh" 1
 fi
 
@@ -219,6 +253,23 @@ bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "Installing latest Node ..."
 install_asdf_language "nodejs"
+
+fancy_echo "Installing Oh My Zsh plugins ..."
+if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
+  # assumption: If zsh-autosuggestions isn't installed, then none of the other
+  # plugins are installed, and I can add this comment on the top to group them
+  # together nicely
+  append_to_zshrc "# Oh My Zsh plugins"
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 1
+fi
+
+if [ -d $HOMEBREW_PREFIX/share/zsh-history-substring-search ]; then
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh" 1
+fi
+
+if [ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]; then
+  append_to_zshrc "source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 1
+fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
