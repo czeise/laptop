@@ -111,7 +111,7 @@ brew "mas" # mas-cli to install macOS apps
 
 # General
 cask "1password"
-brew "1password-cli"
+cask "1password-cli"
 cask "lunar"
 cask "discord" # Using both for personal and work laptop setups
 mas "AdGuard for Safari", id: 1440147259
