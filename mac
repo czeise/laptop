@@ -122,7 +122,7 @@ fancy_echo "Updating Homebrew formulae ..."
 brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "homebrew/services"
-tap "heroku/brew"
+# tap "heroku/brew"
 brew "mas" # mas-cli to install macOS apps, doesn't work with utm
 
 # General
@@ -158,11 +158,11 @@ brew "imagemagick"
 
 # Programming language prerequisites and package managers
 brew "yarn"
-cask "gpg-suite-no-mail"
+# cask "gpg-suite-no-mail"
 
 # Databases
-brew "postgresql@17", restart_service: :changed
-brew "redis", restart_service: :changed
+# brew "postgresql@17", restart_service: :changed
+# brew "redis", restart_service: :changed
 
 # Development tools
 brew "eza"
@@ -186,8 +186,8 @@ cask "utm"
 
 # Test Double
 cask "slack"
-cask "notion"
-brew "heroku/brew/heroku"
+# cask "notion"
+# brew "heroku/brew/heroku"
 cask "zoom"
 
 # Home laptop only
@@ -206,9 +206,9 @@ fancy_echo "Add Starship init script to ~/.zshrc ..."
 append_to_zshrc "# Starship init script"
 append_to_zshrc 'eval "$(starship init zsh)"' 1
 
-fancy_echo "Update heroku binary ..."
-brew unlink heroku
-brew link --force heroku
+# fancy_echo "Update heroku binary ..."
+# brew unlink heroku
+# brew link --force heroku
 
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
