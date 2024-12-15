@@ -196,7 +196,7 @@ mas "Bear", id: 1091189122
 cask "idrive"
 EOF
 
-fancy_echo "Install Oh My Zsh ..."
+fancy_echo "Installing Oh My Zsh ..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   sh -c "$(cat ~/.zshrc.pre-oh-my-zsh >> ~/.zshrc)"
@@ -254,7 +254,7 @@ bundle config --global jobs $((number_of_cores - 1))
 fancy_echo "Installing latest Node ..."
 install_asdf_language "nodejs"
 
-fancy_echo "Install Oh My Zsh plugins ..."
+fancy_echo "Installing Oh My Zsh plugins ..."
 if [ -d $HOMEBREW_PREFIX/share/zsh-autosuggestions ]; then
   # assumption: If zsh-autosuggestions isn't installed, then none of the other
   # plugins are installed, and I can add this comment on the top to group them
