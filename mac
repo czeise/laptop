@@ -111,14 +111,20 @@ brew "mas" # mas-cli to install macOS apps
 
 # General
 cask "1password"
+brew "1password-cli"
+cask "lunar"
 cask "discord" # Using both for personal and work laptop setups
 mas "AdGuard for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
-mas "HP Smart", id: 1474276998
-mas "Bear", id: 1091189122
-# TODO: Add Todoist
+cask "spotify"
+
+# Hardware related apps
+cask "ddpm"
+cask "logi-options+" # Logitech mice and keyboards
+cask "logitune" # Logitech cameras
+mas "HP Smart", id: 1474276998 # HP printers
 
 # Unix
 brew "git"
@@ -154,6 +160,8 @@ cask "firefox@developer-edition"
 cask "font-jetbrains-mono"
 cask "iterm2"
 cask "visual-studio-code"
+cask "tableplus"
+cask "bruno"
 
 # Personal development (can be on TD laptop)
 brew "exercism"
@@ -162,7 +170,14 @@ cask "utm"
 
 # Test Double
 cask "slack"
+cask "notion"
 brew "heroku/brew/heroku"
+cask "zoom"
+
+# Home laptop only
+mas "Bear", id: 1091189122
+# TODO: Add Todoist
+cask "idrive"
 EOF
 
 fancy_echo "Install Oh My Zsh ..."
