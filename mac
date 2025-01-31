@@ -150,10 +150,6 @@ fancy_echo "Add Starship init script to ~/.zshrc ..."
 append_to_zshrc "# Starship init script"
 append_to_zshrc 'eval "$(starship init zsh)"' 1
 
-fancy_echo "Update heroku binary ..."
-brew unlink heroku
-brew link --force heroku
-
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
   brew install asdf
