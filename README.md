@@ -12,6 +12,7 @@ based on what is already installed on the machine.
 
 We support:
 
+* macOS Sequoia (15.x) on Apple Silicon and Intel
 * macOS Sonoma (14.x) on Apple Silicon and Intel
 * macOS Ventura (13.x) on Apple Silicon and Intel
 * macOS Monterey (12.x) on Apple Silicon and Intel
@@ -53,16 +54,38 @@ Read through it to see if you can debug the issue yourself.
 General tools and applications:
 
 * [Homebrew] for managing operating system libraries.
+* [1Password] for password management
+* [Discord] for personal and tech community chat
 
 [Homebrew]: http://brew.sh/
+[1Password]: https://1password.com/
+[Discord]: https://discord.com/
 
 Unix tools:
 
+* [Git] for version control
+* [OpenSSL] for Transport Layer Security (TLS)
 * [RCM] for managing dotfiles
 * [The Silver Searcher] for finding things in files
+* [Tmux] for saving project state and switching between projects
+* [Zsh] as your shell
 
+[Git]: https://git-scm.com/
+[OpenSSL]: https://www.openssl.org/
 [RCM]: https://github.com/thoughtbot/rcm
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
+[Tmux]: http://tmux.github.io/
+[Zsh]: http://www.zsh.org/
+
+<!-- GitHub tools:
+
+* [GitHub CLI] for interacting with the GitHub API
+
+[GitHub CLI]: https://cli.github.com/ -->
+
+Image tools:
+
+* [ImageMagick] for cropping and resizing images
 
 Programming languages, package managers, and configuration:
 
@@ -83,6 +106,38 @@ General development tools and applications:
 
 * exa as an `ls` replacement
 * Terminal and Zsh tools
+
+General development tools and applications:
+
+* [eza] as an `ls` replacement
+* [overmind] for managing Procfile-based applications
+* Terminal and Zsh tools (autocompletion, syntax highlighting, history search, etc.)
+* [Firefox Developer Edition]
+* [iterm2] for a better terminal experience
+* [Visual Studio Code] editor
+
+[eza]: https://eza.rocks
+[overmind]: https://github.com/DarthSim/overmind
+[Firefox Developer Edition]: https://www.mozilla.org/en-US/firefox/developer/
+[iterm2]: https://iterm2.com/
+[Visual Studio Code]: https://code.visualstudio.com/
+
+Personal development tools and applications (can be on TD laptop):
+
+* [exercism] for programming exercises
+* [flyctl] for deploying to Fly.io
+* [utm] for running macOS in a virtual machine (and testing this script...)
+
+[exercism]: https://exercism.io/
+[flyctl]: https://fly.io/docs/flyctl/
+[utm]: https://mac.getutm.app
+
+Test Double Tools and applications:
+
+* [Heroku CLI]
+* Slack
+
+[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
 
 It should take less than 15 minutes to install (depends on your machine).
 
@@ -169,26 +224,27 @@ Tip: Make a fresh virtual machine with the installation of macOS completed and
 your user created and first launch complete. Then duplicate that machine to test
 the script each time on a fresh install thats ready to go.
 
-[UTM]: https://mac.getutm.app
-
 ## License
 
-Laptop is © 2011-2023 thoughtbot, inc.
+Copyright © 2011 thoughtbot, inc.
 It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
 
+<!-- START /templates/footer.md -->
 ## About thoughtbot
 
-![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
+![thoughtbot](https://thoughtbot.com/thoughtbot-logo-for-readmes.svg)
 
-Laptop is maintained and funded by thoughtbot, inc.
+This repo is maintained and funded by thoughtbot, inc.
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
-We are passionate about open source software.
+We love open source software!
 See [our other projects][community].
 We are [available for hire][hire].
 
 [community]: https://thoughtbot.com/community?utm_source=github
-[hire]: https://thoughtbot.com?utm_source=github
+[hire]: https://thoughtbot.com/hire-us?utm_source=github
+
+<!-- END /templates/footer.md -->
