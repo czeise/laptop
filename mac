@@ -79,22 +79,6 @@ case "$SHELL" in
     ;;
 esac
 
-# Rosetta 2
-#
-# Note: This is currently only needed for ddpm. Remove if no longer needed.
-if [ "$(uname -m)" = "arm64" ]
-  then
-  # checks if Rosetta is already installed
-  if ! pkgutil --pkg-info=com.apple.pkg.RosettaUpdateAuto > /dev/null 2>&1
-  then
-    echo "Installing Rosetta"
-    # Installs Rosetta2
-    softwareupdate --install-rosetta --agree-to-license
-  else
-    echo "Rosetta is installed"
-  fi
-fi
-
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     gem update "$@"
@@ -121,19 +105,15 @@ fi
 fancy_echo "Updating Homebrew formulae ..."
 brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
-tap "heroku/brew"
 brew "mas" # mas-cli to install macOS apps, doesn't work with utm
 
 # General
 cask "1password"
 cask "1password-cli"
-cask "lunar"
-cask "discord" # Using both for personal and work laptop setups
 mas "AdGuard for Safari", id: 1440147259
 mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
-cask "spotify"
 
 # Hardware related apps
 cask "ddpm"
@@ -147,53 +127,26 @@ brew "git"
 brew "openssl"
 brew "rcm"
 brew "the_silver_searcher"
-brew "tmux"
 brew "zsh"
 
 # GitHub
-# brew "gh"
-
-# Image manipulation
-brew "imagemagick"
+brew "gh"
 
 # Programming language prerequisites and package managers
 brew "yarn"
 cask "gpg-suite-no-mail"
 
-# Databases
-brew "postgresql@17", restart_service: :changed
-brew "redis", restart_service: :changed
-
 # Development tools
 brew "eza"
-brew "overmind"
 brew "terminal-notifier"
 brew "starship"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
-cask "firefox@developer-edition"
 cask "font-jetbrains-mono"
 cask "iterm2"
 cask "visual-studio-code"
-cask "tableplus"
-cask "bruno"
 
-# Personal development (can be on TD laptop)
-brew "exercism"
-brew "flyctl"
-cask "utm"
-
-# Test Double
-cask "slack"
-cask "notion"
-brew "heroku/brew/heroku"
-cask "zoom"
-
-# Home laptop only
-mas "Bear", id: 1091189122
-# TODO: Add Todoist
-cask "idrive"
 EOF
 
 fancy_echo "Installing Oh My Zsh ..."
@@ -205,10 +158,6 @@ fi
 fancy_echo "Add Starship init script to ~/.zshrc ..."
 append_to_zshrc "# Starship init script"
 append_to_zshrc 'eval "$(starship init zsh)"' 1
-
-fancy_echo "Update heroku binary ..."
-brew unlink heroku
-brew link --force heroku
 
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then

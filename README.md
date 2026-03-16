@@ -1,6 +1,6 @@
 # Laptop
 
-This is a fork of [thoughtbot/laptop](<https://github.com/thoughtbot/laptop>) modified for my personal laptop setup.
+This is a fork of [thoughtbot/laptop](<https://github.com/thoughtbot/laptop>) modified for my Gifthealth laptop setup.
 
 Laptop is a script to set up a macOS laptop for web and mobile development.
 
@@ -25,7 +25,7 @@ Bug reports for older versions are welcome.
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/czeise/laptop/main/mac
+curl --remote-name https://raw.githubusercontent.com/czeise/laptop/gifthealth/mac
 ```
 
 Execute the downloaded script:
@@ -55,11 +55,9 @@ General tools and applications:
 
 * [Homebrew] for managing operating system libraries.
 * [1Password] for password management
-* [Discord] for personal and tech community chat
 
 [Homebrew]: http://brew.sh/
 [1Password]: https://1password.com/
-[Discord]: https://discord.com/
 
 Unix tools:
 
@@ -68,7 +66,6 @@ Unix tools:
 * [OpenSSL] for Transport Layer Security (TLS)
 * [RCM] for managing dotfiles
 * [The Silver Searcher] for finding things in files
-* [Tmux] for saving project state and switching between projects
 * [Zsh] as your shell
 
 [fzf]: https://github.com/junegunn/fzf
@@ -76,7 +73,6 @@ Unix tools:
 [OpenSSL]: https://www.openssl.org/
 [RCM]: https://github.com/thoughtbot/rcm
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
-[Tmux]: http://tmux.github.io/
 [Zsh]: http://www.zsh.org/
 
 <!-- GitHub tools:
@@ -84,10 +80,6 @@ Unix tools:
 * [GitHub CLI] for interacting with the GitHub API
 
 [GitHub CLI]: https://cli.github.com/ -->
-
-Image tools:
-
-* [ImageMagick] for cropping and resizing images
 
 Programming languages, package managers, and configuration:
 
@@ -98,52 +90,22 @@ Programming languages, package managers, and configuration:
 * [Yarn] for managing JavaScript packages
 
 [Bundler]: http://bundler.io/
-[ImageMagick]: http://www.imagemagick.org/
 [Node.js]: http://nodejs.org/
 [npm]: https://www.npmjs.org/
 [asdf-vm]: https://github.com/asdf-vm/asdf
 [Ruby]: https://www.ruby-lang.org/en/
 [Yarn]: https://yarnpkg.com/en/
 
-Databases:
-
-* [Postgres] for storing relational data
-* [Redis] for storing key-value data
-
-[Postgres]: http://www.postgresql.org/
-[Redis]: http://redis.io/
-
 General development tools and applications:
 
 * [eza] as an `ls` replacement
-* [overmind] for managing Procfile-based applications
 * Terminal and Zsh tools (autocompletion, syntax highlighting, history search, etc.)
-* [Firefox Developer Edition]
 * [iterm2] for a better terminal experience
 * [Visual Studio Code] editor
 
 [eza]: https://eza.rocks
-[overmind]: https://github.com/DarthSim/overmind
-[Firefox Developer Edition]: https://www.mozilla.org/en-US/firefox/developer/
 [iterm2]: https://iterm2.com/
 [Visual Studio Code]: https://code.visualstudio.com/
-
-Personal development tools and applications (can be on TD laptop):
-
-* [exercism] for programming exercises
-* [flyctl] for deploying to Fly.io
-* [utm] for running macOS in a virtual machine (and testing this script...)
-
-[exercism]: https://exercism.io/
-[flyctl]: https://fly.io/docs/flyctl/
-[utm]: https://mac.getutm.app
-
-Test Double Tools and applications:
-
-* [Heroku CLI]
-* Slack
-
-[Heroku CLI]: https://devcenter.heroku.com/articles/heroku-cli
 
 It should take less than 15 minutes to install (depends on your machine).
 
@@ -221,7 +183,6 @@ brew install shellcheck
 [ShellCheck]: http://www.shellcheck.net/about.html
 [Syntastic]: https://github.com/scrooloose/syntastic
 [ALE]: https://github.com/dense-analysis/ale
-
 
 ### Testing your changes
 
