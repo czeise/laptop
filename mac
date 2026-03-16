@@ -124,10 +124,7 @@ brew bundle --file=- <<EOF
 brew "mas" # mas-cli to install macOS apps, doesn't work with utm
 
 # General
-cask "1password"
-cask "1password-cli"
 mas "AdGuard for Safari", id: 1440147259
-mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "com.kagimacOS.Kagi-Search", id: 1622835804
 
@@ -135,7 +132,6 @@ mas "com.kagimacOS.Kagi-Search", id: 1622835804
 cask "ddpm"
 cask "logi-options+" # Logitech mice and keyboards
 cask "logitune" # Logitech cameras
-mas "HP Smart", id: 1474276998 # HP printers
 
 # Unix
 brew "fzf"
@@ -160,8 +156,6 @@ brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 cask "font-jetbrains-mono"
-cask "iterm2"
-cask "visual-studio-code"
 
 EOF
 

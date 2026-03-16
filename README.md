@@ -54,10 +54,8 @@ Read through it to see if you can debug the issue yourself.
 General tools and applications:
 
 * [Homebrew] for managing operating system libraries.
-* [1Password] for password management
 
 [Homebrew]: http://brew.sh/
-[1Password]: https://1password.com/
 
 Unix tools:
 
@@ -100,12 +98,8 @@ General development tools and applications:
 
 * [eza] as an `ls` replacement
 * Terminal and Zsh tools (autocompletion, syntax highlighting, history search, etc.)
-* [iterm2] for a better terminal experience
-* [Visual Studio Code] editor
 
 [eza]: https://eza.rocks
-[iterm2]: https://iterm2.com/
-[Visual Studio Code]: https://code.visualstudio.com/
 
 It should take less than 15 minutes to install (depends on your machine).
 
